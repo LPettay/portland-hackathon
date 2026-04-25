@@ -67,8 +67,10 @@ See [`docs/architecture.md`](./docs/architecture.md) for the full diagram.
 ├── .cursor/rules/      # Persistent Cursor agent rules (TS, React, etc.)
 ├── .github/            # PR template, issue templates, CI
 ├── docs/               # Architecture, ADRs, demo script
+│   ├── decisions/      # ADRs (one short markdown per structural choice)
+│   └── templates/      # Per-template design briefs (one per src/templates/*)
 ├── presentation/       # Slidev judges-handout deck (self-contained sub-project)
-├── public/             # Static assets
+├── scripts/            # Repo-hygiene tooling (check, stamp, worktree helpers)
 ├── src/
 │   ├── app/            # Next.js app router (pages + API routes)
 │   ├── components/     # React UI components

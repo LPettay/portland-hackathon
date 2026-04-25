@@ -48,7 +48,7 @@ bun-debug.log*
 next-env.d.ts
 
 # Bun
-# Note: we DO commit bun.lockb for reproducible builds
+# Note: we DO commit bun.lock (text format) for reproducible builds
 
 # OS
 Thumbs.db
