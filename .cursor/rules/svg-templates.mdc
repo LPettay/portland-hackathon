@@ -1,0 +1,44 @@
+---
+description: SVG motion template authoring rules
+globs: src/templates/**/*.tsx
+alwaysApply: false
+---
+
+# SVG Template Rules
+
+The templates directory is sacred. These are the moat. Treat them with care.
+
+## Template contract
+
+Every template is a React component that accepts the same props shape:
+
+```tsx
+type TemplateProps = {
+  businessName: string;
+  tagline: string;
+  primaryColor: string;   // hex, e.g. "#0F172A"
+  accentColor: string;    // hex
+  iconKey?: string;       // optional, template-specific
+};
+```
+
+## Authoring rules
+
+- **Keep viewBox consistent**: `0 0 800 600` for all hero templates.
+- **Loop seamlessly**: animations must end where they began. No visible jump on repeat.
+- **Loop length**: 4–6 seconds. Long enough to feel intentional, short enough to feel snappy.
+- **Use `prefers-reduced-motion`**: respect it via Framer Motion's `useReducedMotion`.
+- **No external assets**: no `<image>` references, no fonts beyond system stack. Pure paths and shapes.
+- **Performance**: max ~30 animated elements per template. Use `will-change: transform` on the heaviest movers.
+
+## Naming
+
+- Files: `kebab-case.tsx` (e.g. `coffee-shop.tsx`, `tech-saas.tsx`)
+- Component name: `PascalCase` matching file (`CoffeeShop`, `TechSaas`)
+- Register in `src/templates/registry.ts` so the LLM can pick it.
+
+## Do NOT
+
+- Do not use AI to generate or modify SVG path data. Templates are hand-crafted.
+- Do not import images, lottie files, or external libraries beyond `framer-motion` and `react`.
+- Do not break the `TemplateProps` contract.

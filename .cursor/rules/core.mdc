@@ -1,0 +1,26 @@
+---
+description: Core MotionPitch project rules — always apply
+alwaysApply: true
+---
+
+# MotionPitch — Core Rules
+
+## Hard constraints
+
+- **Package manager:** `bun` only. Never `npm`, `yarn`, `pnpm`.
+- **Framework:** Next.js 15, App Router only.
+- **LLM output:** Always structured JSON. **Never** request raw SVG from the model.
+- **Hand-crafted templates are the moat.** Don't generate or modify SVG templates with the LLM.
+
+## Workflow
+
+- Read the directory's `AGENTS.md` before editing files in it.
+- Prefer editing existing files over creating new ones.
+- After substantive edits: `bun run lint && bun run typecheck`.
+- Commit messages: [Conventional Commits](https://www.conventionalcommits.org/).
+
+## Out of scope (do not build)
+
+Auth, persistence, databases, post-generation editing, multi-page output, image generation, > 4 templates, mobile-specific layouts.
+
+If asked to build any of these, redirect to `docs/demo-script.md`.

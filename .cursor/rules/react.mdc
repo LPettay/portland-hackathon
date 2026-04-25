@@ -1,0 +1,47 @@
+---
+description: React + Next.js App Router conventions for MotionPitch
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# React / Next.js Rules
+
+## Component model
+
+- Functional components only. No class components.
+- Server components by default. Add `"use client"` only when you need:
+  - Browser APIs (`window`, `document`, etc.)
+  - State or effects (`useState`, `useEffect`)
+  - Event handlers (`onClick`, `onChange`)
+  - Framer Motion animations
+
+## File organization
+
+- One component per file. Filename matches component name (`HeroAnimation.tsx`).
+- Colocate component-specific types in the same file.
+- Shared types live in `src/types/`.
+
+## Styling
+
+- Tailwind only. No inline styles unless dynamic (e.g. animated SVG colors via props).
+- For dynamic Tailwind classes, use the full class name — never string-interpolate (`bg-${color}` breaks JIT).
+
+```tsx
+// BAD
+<div className={`bg-${color}-500`} />
+
+// GOOD
+const colorClasses = { red: 'bg-red-500', blue: 'bg-blue-500' };
+<div className={colorClasses[color]} />
+```
+
+## Framer Motion
+
+- Use `motion.svg`, `motion.path`, etc. directly — don't wrap.
+- Prefer `variants` over inline `animate` props for anything beyond trivial transitions.
+- All template animations should loop seamlessly (set `repeat: Infinity` and design the keyframes accordingly).
+
+## Forms
+
+- Controlled inputs only.
+- Use native `<form>` with `action` for server actions when possible.
