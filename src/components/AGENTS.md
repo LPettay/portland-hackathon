@@ -2,12 +2,20 @@
 
 Reusable React UI components. Not pages, not API, not templates.
 
-## What lives here
+## Index
 
-- `InputBox.tsx` — the single text input with submit
-- `LandingPage.tsx` — the wrapper that composes a template + copy into a full page
-- `LoadingState.tsx` — the SVG draw-in loader
-- `ErrorState.tsx` — friendly error fallback
+### Files here
+
+*(none yet)*
+
+### Planned (not yet created)
+
+| File | Purpose | Tracked in |
+|---|---|---|
+| `InputBox.tsx` | Single text input with submit | `docs/architecture.md` |
+| `LandingPage.tsx` | Composes a template + copy into a full page | `docs/architecture.md` |
+| `LoadingState.tsx` | SVG draw-in loader (not a spinner) | `docs/demo-script.md` |
+| `ErrorState.tsx` | Friendly error fallback | `docs/architecture.md` |
 
 That's the expected set for the hackathon. Add more only if essential.
 
@@ -28,4 +36,4 @@ That's the expected set for the hackathon. Add more only if essential.
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

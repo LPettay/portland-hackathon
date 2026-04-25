@@ -2,6 +2,21 @@
 
 Architecture Decision Records (ADRs). One markdown file per structural decision.
 
+## Index
+
+### Files here
+
+| File | Decision |
+|---|---|
+| `0000-template.md` | Template — copy this for new ADRs |
+| `0001-use-bun.md` | Use Bun as package manager + runtime |
+| `0002-no-llm-svg-generation.md` | LLM emits structured JSON only; never raw SVG |
+| `0003-slidev-for-judges-handout.md` | Slidev for the 3-slide judges-handout deck |
+| `0004-pr-cycle-on-main.md` | Branch-protected `main`; every change goes through a PR |
+| `0005-agents-md-index-convention.md` | Every `AGENTS.md` carries a navigable Index section |
+
+When you add an ADR, add a row above and bump the number sequentially.
+
 ## Rules
 
 - **One decision per file.** If a PR makes two decisions, write two ADRs.
@@ -35,4 +50,4 @@ Write an ADR when you make any of these decisions:
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

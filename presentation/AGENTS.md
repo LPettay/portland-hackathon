@@ -2,6 +2,17 @@
 
 The judges-handout deck. Self-contained Slidev project; isolated from the main Next.js app.
 
+## Index
+
+### Files here
+
+| File | Purpose |
+|---|---|
+| `slides.md` | Source of truth — all 3 slides as Markdown + inline SVG |
+| `package.json` | Slidev install + dev/build/export scripts |
+| `README.md` | How to run the deck locally and export to PDF |
+| `.gitignore` | Slidev build artifacts |
+
 ## What this is
 
 A **3-slide max** Markdown-driven deck (`slides.md`) projected alongside the live demo so judges can understand MotionPitch in 30 seconds without listening to the speaker.
@@ -38,4 +49,4 @@ A **3-slide max** Markdown-driven deck (`slides.md`) projected alongside the liv
 
 ---
 
-<!-- last-reviewed: 6895d09 -->
+<!-- last-reviewed: a9279ef -->

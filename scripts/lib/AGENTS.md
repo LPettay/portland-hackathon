@@ -2,7 +2,9 @@
 
 Helper modules used by the check and stamp scripts. Pure functions, stdlib only.
 
-## Files
+## Index
+
+### Files here
 
 | File | Exports | Purpose |
 |---|---|---|
@@ -31,4 +33,4 @@ Helper modules used by the check and stamp scripts. Pure functions, stdlib only.
 
 ---
 
-<!-- last-reviewed: 58bbdc9 -->
+<!-- last-reviewed: a9279ef -->

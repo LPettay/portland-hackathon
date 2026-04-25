@@ -2,19 +2,20 @@
 
 Repo-hygiene tooling. **Not** product code. These scripts enforce the conventions documented in every other `AGENTS.md`.
 
-## Files
+## Index
+
+### Files here
 
 | File | Purpose |
 |---|---|
 | `check.ts` | Orchestrator. Runs all enabled checks and reports findings. |
 | `stamp.ts` | Writes the `<!-- last-reviewed: SHA -->` footer to AGENTS.md files. |
-| `lib/config.ts` | Tunable constants (thresholds, ignored dirs, forbidden files). |
-| `lib/walk.ts` | Recursive directory iterator with ignore-list awareness. |
-| `lib/git.ts` | Thin wrapper around `git` for SHA + diff queries. |
-| `lib/types.ts` | `Finding` + `CheckResult` shapes. |
-| `lib/check-presence.ts` | Layer 2a — every dir with files needs an AGENTS.md. |
-| `lib/check-forbidden.ts` | Layer 2c — no wrong-package-manager lockfiles, no `.env`. |
-| `lib/check-freshness.ts` | Layer 5 — AGENTS.md goes stale after N file changes. |
+
+### Subdirectories
+
+| Dir | AGENTS.md | Purpose |
+|---|---|---|
+| `lib/` | [`lib/AGENTS.md`](./lib/AGENTS.md) | Helper modules (config, walk, git, types) and the individual `check-*.ts` checks |
 
 ## Rules
 
@@ -39,4 +40,4 @@ Repo-hygiene tooling. **Not** product code. These scripts enforce the convention
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

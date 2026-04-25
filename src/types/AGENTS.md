@@ -2,19 +2,25 @@
 
 Shared TypeScript types and Zod schemas used across `src/`.
 
+## Index
+
+### Files here
+
+*(none yet)*
+
+### Planned (not yet created)
+
+| File | Purpose | Tracked in |
+|---|---|---|
+| `template-selection.ts` | Zod schema for the LLM's structured output | `docs/architecture.md` |
+| `template.ts` | The `TemplateProps` contract | `src/templates/AGENTS.md` |
+| `api.ts` | Request/response shapes for `/api/generate` | `docs/architecture.md` |
+
 ## Rules
 
 - **Schemas first, types derived.** Use `z.infer<typeof Schema>` to avoid drift.
 - **One concept per file.** `template-selection.ts`, `palette.ts`, etc.
 - **No runtime code.** Types and schemas only. Helpers go in `src/lib/`.
-
-## Expected files (hackathon scope)
-
-| File | Purpose |
-|---|---|
-| `template-selection.ts` | Zod schema for the LLM's structured output |
-| `template.ts` | The `TemplateProps` contract |
-| `api.ts` | Request/response shapes for `/api/generate` |
 
 ## Example
 
@@ -39,4 +45,4 @@ export type TemplateSelection = z.infer<typeof TemplateSelectionSchema>;
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->
