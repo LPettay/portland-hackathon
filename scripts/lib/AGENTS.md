@@ -6,7 +6,7 @@ Helper modules used by the check and stamp scripts. Pure functions, stdlib only.
 
 | File | Exports | Purpose |
 |---|---|---|
-| `config.ts` | `config`, `formatStamp`, `parseStamp` | Tunables and stamp format |
+| `config.ts` | `config`, `formatStamp`, `parseStamp` | Tunables (enforcement roots, threshold, forbidden files) and stamp format |
 | `walk.ts` | `walkDirs`, `dirHasFiles`, `DirEntry` | Recursive directory iterator |
 | `git.ts` | `headSha`, `shaExists`, `changedFilesIn` | Thin git wrappers via `child_process` |
 | `types.ts` | `Severity`, `Finding`, `CheckResult`, `ok` | Shared shapes |

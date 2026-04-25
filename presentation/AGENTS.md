@@ -35,3 +35,7 @@ A **3-slide max** Markdown-driven deck (`slides.md`) projected alongside the liv
 - Don't import images larger than necessary (we want PDF export to stay <2MB).
 - Don't add transitions fancier than `fade` or `slide-left`.
 - Don't bring in a new theme without ADR sign-off.
+
+---
+
+<!-- last-reviewed: 6895d09 -->

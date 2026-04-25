@@ -92,7 +92,7 @@ If a contributor (human or AI) proposes one of these, redirect to the demo scrip
 
 Five layers stop bad commits. You don't need to memorize them — `bun run check` reports everything and tells you how to fix it. Highlights:
 
-- **AGENTS.md is mandatory** for every directory under `src/` and `docs/` that contains files. The presence check fails commits that skip this.
+- **AGENTS.md is mandatory** for every directory under `src/`, `docs/`, `scripts/`, and `presentation/` that contains files. The presence check fails commits that skip this.
 - **AGENTS.md goes stale** after >5 non-AGENTS file changes in its directory since the last stamp. Re-review and re-stamp with `bun run agents:stamp <path>`.
 - **A Cursor `postToolUse` hook** nudges you in real time when you write a file to a directory without an AGENTS.md.
 - **No `package-lock.json` / `yarn.lock` / `pnpm-lock.yaml`** — bun only.
