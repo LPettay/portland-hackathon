@@ -1,0 +1,17 @@
+{
+  "name": "motionpitch-presentation",
+  "version": "0.0.0",
+  "private": true,
+  "description": "MotionPitch judges-handout deck (Slidev).",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export",
+    "export-pdf": "slidev export --format pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.14.2",
+    "@slidev/theme-seriph": "^0.25.0",
+    "vue": "^3.5.0"
+  }
+}
