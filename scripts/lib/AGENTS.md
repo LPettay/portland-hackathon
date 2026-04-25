@@ -31,4 +31,4 @@ Helper modules used by the check and stamp scripts. Pure functions, stdlib only.
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: 58bbdc9 -->
