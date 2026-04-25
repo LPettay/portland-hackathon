@@ -39,8 +39,4 @@ Repo-hygiene tooling. **Not** product code. These scripts enforce the convention
 
 ---
 
-<!-- last-reviewed: TBD -->
-
----
-
 <!-- last-reviewed: 0d84014 -->
