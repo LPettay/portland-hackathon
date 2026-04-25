@@ -14,6 +14,7 @@ Architecture Decision Records (ADRs). One markdown file per structural decision.
 | `0003-slidev-for-judges-handout.md` | Slidev for the 3-slide judges-handout deck |
 | `0004-pr-cycle-on-main.md` | Branch-protected `main`; every change goes through a PR |
 | `0005-agents-md-index-convention.md` | Every `AGENTS.md` carries a navigable Index section |
+| `0006-git-worktrees-for-parallel-agents.md` | One `git worktree` per concurrent agent session |
 
 When you add an ADR, add a row above and bump the number sequentially.
 
@@ -50,4 +51,4 @@ Write an ADR when you make any of these decisions:
 
 ---
 
-<!-- last-reviewed: a9279ef -->
+<!-- last-reviewed: f4554fe -->

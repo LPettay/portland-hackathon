@@ -49,6 +49,29 @@ EOF
 
 ---
 
+## Parallel agents → one worktree per agent
+
+A single git checkout has **one `HEAD`**. Two Cursor sessions sharing the same checkout will trample each other's `git switch`, and you'll silently end up with branches rooted at the wrong tip. We've already been bitten by this once.
+
+The rule: **one worktree per concurrent agent.** If you're spinning up a parallel session, create a worktree for it first.
+
+```bash
+# from the primary checkout
+bun run wt:add feat/coffee-shop          # creates ../<repo>-wt/feat-coffee-shop on a new branch
+bun run wt:add docs/preso-scaffolding-slide   # picks up an existing local or remote branch automatically
+
+bun run wt:list                          # see all worktrees
+bun run wt:remove feat/coffee-shop       # tear down (deletes branch only if merged to origin/main)
+```
+
+Then open the printed worktree path in a new Cursor window. That session's agent now has its own independent `HEAD`, index, stash, and pre-commit hook invocation. Branches can no longer cross-contaminate.
+
+The primary checkout (`~/PortlandHackathon`) should stay on `main`, used only for pulls and admin. All real work happens in worktrees.
+
+Rationale: [`docs/decisions/0006-git-worktrees-for-parallel-agents.md`](./docs/decisions/0006-git-worktrees-for-parallel-agents.md).
+
+---
+
 ## Pull requests
 
 `main` is **branch-protected**. You cannot push directly. Every change goes through this loop:

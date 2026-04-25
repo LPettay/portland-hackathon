@@ -112,6 +112,7 @@ If a contributor (human or AI) proposes one of these, redirect to the demo scrip
 6. **If you make a structural decision** (new directory, new dependency, schema change), append a one-paragraph ADR to `docs/decisions/`.
 7. **Commit messages** follow Conventional Commits (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
 8. **Never commit directly to `main`** — it's branch-protected. Every change goes through a PR (see [CONTRIBUTING.md](./CONTRIBUTING.md#pull-requests)). One feature = one branch = one PR = one squash-merge.
+9. **If you are a parallel agent, you are in a worktree.** A single checkout has one `HEAD`; two sessions sharing one checkout will silently trample each other's `git switch`. The primary checkout (`~/PortlandHackathon`) stays on `main`. All real work happens in `git worktree`s spun up via `bun run wt:add <branch>`. See [`CONTRIBUTING.md`](./CONTRIBUTING.md#parallel-agents--one-worktree-per-agent) and [`docs/decisions/0006-git-worktrees-for-parallel-agents.md`](./docs/decisions/0006-git-worktrees-for-parallel-agents.md).
 
 ## Index convention
 
@@ -156,4 +157,4 @@ Decisions you can make autonomously:
 
 ---
 
-<!-- last-reviewed: a9279ef -->
+<!-- last-reviewed: f4554fe -->
