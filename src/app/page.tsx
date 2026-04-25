@@ -42,7 +42,7 @@ export default function Home() {
   }
 
   return (
-    <main className="grid min-h-screen place-items-center bg-black px-6 py-12 text-white">
+    <main className="grid min-h-screen place-items-center bg-black px-6 py-6 text-white">
       <AnimatePresence mode="wait">
         {state.kind === "idle" && (
           <motion.div
@@ -102,7 +102,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center gap-12"
+            className="flex flex-col items-center gap-6"
           >
             <CoffeeShop {...state.hero} />
             <button

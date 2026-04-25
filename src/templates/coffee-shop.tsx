@@ -53,11 +53,11 @@ export default function CoffeeShop({
   const pivotY = bodyY + bodyH / 2; // 312
 
   return (
-    <div className="flex flex-col items-center gap-10">
+    <div className="flex flex-col items-center gap-6">
       <div className="[perspective:1400px]">
         <svg
           viewBox="0 0 800 600"
-          className="block h-[420px] w-[560px] sm:h-[480px] sm:w-[640px]"
+          className="block h-[280px] w-[373px] sm:h-[340px] sm:w-[453px]"
           shapeRendering="crispEdges"
           aria-hidden
         >
