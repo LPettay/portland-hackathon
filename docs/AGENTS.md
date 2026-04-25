@@ -16,6 +16,7 @@ Living documentation for the project. Read these before making structural decisi
 | Dir | AGENTS.md | Purpose |
 |---|---|---|
 | `decisions/` | [`decisions/AGENTS.md`](./decisions/AGENTS.md) | ADRs (Architecture Decision Records) — one short markdown per structural choice |
+| `templates/` | [`templates/AGENTS.md`](./templates/AGENTS.md) | Design briefs for `src/templates/` motion templates — one brief per template |
 
 ## Rules
 
