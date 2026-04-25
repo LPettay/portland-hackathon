@@ -83,8 +83,8 @@ function add(repoRoot: string, branch: string | undefined): void {
 
   ensureFreshOriginMain(repoRoot);
 
-  const branchExistsLocal = run(repoRoot, `git show-ref --verify --quiet refs/heads/${branch}`, { ok: true });
-  const branchExistsRemote = run(repoRoot, `git show-ref --verify --quiet refs/remotes/origin/${branch}`, { ok: true });
+  const branchExistsLocal = commandOk(repoRoot, `git show-ref --verify --quiet refs/heads/${branch}`);
+  const branchExistsRemote = commandOk(repoRoot, `git show-ref --verify --quiet refs/remotes/origin/${branch}`);
 
   let cmd: string;
   let mode: string;
@@ -166,16 +166,24 @@ function ensureFreshOriginMain(repoRoot: string): void {
   run(repoRoot, "git fetch origin --prune", { capture: true });
 }
 
-type RunOpts = { capture?: boolean; ok?: boolean };
+type RunOpts = { capture?: boolean };
 function run(cwd: string, cmd: string, opts: RunOpts = {}): string {
   try {
-    const out = execSync(cmd, { cwd, stdio: opts.capture || opts.ok ? ["ignore", "pipe", "pipe"] : "inherit" });
+    const out = execSync(cmd, { cwd, stdio: opts.capture ? ["ignore", "pipe", "pipe"] : "inherit" });
     return out ? out.toString() : "";
   } catch (e) {
-    if (opts.ok) return "";
     const err = e as { status?: number; stderr?: Buffer };
     if (err.stderr) process.stderr.write(err.stderr);
     process.exit(err.status ?? 1);
+  }
+}
+
+function commandOk(cwd: string, cmd: string): boolean {
+  try {
+    execSync(cmd, { cwd, stdio: "ignore" });
+    return true;
+  } catch {
+    return false;
   }
 }
 
