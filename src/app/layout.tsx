@@ -3,17 +3,15 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MotionPitch",
+  title: "MotionPitch — pixel art for your idea",
   description:
-    "Type a business in one sentence, get a one-page landing site whose hero is a custom-animated SVG scene.",
+    "Describe your shop in one sentence. Get a custom-named, custom-colored, slowly-rotating pixel-art coffee mug.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-white text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100">
-        {children}
-      </body>
+      <body className="bg-black text-white antialiased">{children}</body>
     </html>
   );
 }
