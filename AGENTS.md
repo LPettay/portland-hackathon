@@ -6,6 +6,30 @@ Each subdirectory has its own `AGENTS.md` with scope-specific guidance — read 
 
 ---
 
+## Crawl map (every `AGENTS.md` in the repo)
+
+Read this once and you know where to go next. Every entry below is a real `AGENTS.md` with its own scoped Index — see [Index convention](#index-convention) for the format.
+
+```
+.
+├── AGENTS.md                       ← you are here (constraints, time budget, scope firewall)
+├── .cursor/AGENTS.md               Cursor rules + hooks layout (rules/, hooks/)
+├── docs/AGENTS.md                  Architecture + ADR conventions
+│   └── decisions/AGENTS.md         ADR format + when to write one
+├── presentation/AGENTS.md          Slidev judges-handout deck (3-slide cap)
+├── scripts/AGENTS.md               Repo-hygiene scripts (check, stamp)
+│   └── lib/AGENTS.md               Check helper modules (config, walk, git, types, checks)
+└── src/AGENTS.md                   App source root (dependency direction, alias)
+    ├── app/AGENTS.md               Next.js App Router pages + layouts
+    │   └── api/AGENTS.md           API route handlers (server-only, validates LLM I/O)
+    ├── components/AGENTS.md        Reusable React UI (input, page, loader, error)
+    ├── lib/AGENTS.md               LLM client + utilities (no React)
+    ├── templates/AGENTS.md         Hand-crafted SVG motion templates ★ moat
+    └── types/AGENTS.md             Shared types + Zod schemas
+```
+
+---
+
 ## Project at a glance
 
 **MotionPitch** — Type a business in one sentence, get a one-page landing site whose hero is a custom-animated SVG scene generated for that business. Built for the Cursor Portland Hackathon (3-hour sprint).
@@ -89,6 +113,16 @@ If a contributor (human or AI) proposes one of these, redirect to the demo scrip
 7. **Commit messages** follow Conventional Commits (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
 8. **Never commit directly to `main`** — it's branch-protected. Every change goes through a PR (see [CONTRIBUTING.md](./CONTRIBUTING.md#pull-requests)). One feature = one branch = one PR = one squash-merge.
 
+## Index convention
+
+Every `AGENTS.md` in this repo carries an **Index** section near the top with up to three sub-tables — include only the ones that apply:
+
+- **Files here** — files that actually exist in the directory today, one-line purpose each.
+- **Subdirectories** — direct subdirs, each linked to its own `AGENTS.md`, one-line purpose each.
+- **Planned (not yet created)** — files that the directory's design calls for but that haven't been written yet, with a pointer to where the plan lives. Agents should NOT try to read these.
+
+When you add a file, add an entry. When you create a file from "Planned", move its row from Planned to Files here. Rationale: [`docs/decisions/0005-agents-md-index-convention.md`](./docs/decisions/0005-agents-md-index-convention.md).
+
 ## Enforcement (you can't lie to the repo)
 
 Five layers stop bad commits. You don't need to memorize them — `bun run check` reports everything and tells you how to fix it. Highlights:
@@ -122,4 +156,4 @@ Decisions you can make autonomously:
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

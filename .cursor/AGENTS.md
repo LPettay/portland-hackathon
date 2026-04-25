@@ -1,20 +1,21 @@
 # AGENTS.md — `.cursor/`
 
-Cursor-specific configuration: rules and hooks. Not required by the presence check (this dir is outside `src/` and `docs/`), but documented here for clarity.
+Cursor-specific configuration: rules and hooks. Not required by the presence check (this dir is outside the enforced roots), but documented here for clarity.
 
-## Layout
+## Index
 
-```
-.cursor/
-├── rules/                       # Persistent agent rules (.mdc)
-│   ├── core.mdc                 # alwaysApply: true — project-wide
-│   ├── typescript.mdc           # globs: **/*.ts(x)
-│   ├── react.mdc                # globs: **/*.tsx
-│   └── svg-templates.mdc        # globs: src/templates/**/*.tsx
-├── hooks/
-│   └── check-agents-md.sh       # postToolUse Write hook
-└── hooks.json                   # hook registration
-```
+### Files here
+
+| File | Purpose |
+|---|---|
+| `hooks.json` | Hook registration (which scripts run on which Cursor events) |
+
+### Subdirectories
+
+| Dir | Contents |
+|---|---|
+| `rules/` | `core.mdc` (alwaysApply, project-wide), `typescript.mdc` (`**/*.ts(x)`), `react.mdc` (`**/*.tsx`), `svg-templates.mdc` (`src/templates/**/*.tsx`) |
+| `hooks/` | `check-agents-md.sh` — postToolUse Write hook that nudges when an agent writes to a dir without `AGENTS.md` |
 
 ## Rules conventions
 

@@ -2,6 +2,18 @@
 
 Next.js API route handlers. Server-only.
 
+## Index
+
+### Files here
+
+*(none yet)*
+
+### Planned (not yet created)
+
+| File | Method | Purpose | Tracked in |
+|---|---|---|---|
+| `generate/route.ts` | POST | `{ description: string }` → `{ templateId, palette, copy, icons }` | `docs/architecture.md` |
+
 ## Rules
 
 - **Never expose the `OPENAI_API_KEY` to the client.** All LLM calls happen here.
@@ -20,12 +32,6 @@ Return shape on error:
 
 The client should show a friendly fallback (suggest a retry or pre-baked example).
 
-## Routes
-
-| File | Method | Purpose |
-|---|---|---|
-| `generate/route.ts` | POST | `{ description: string }` → `{ templateId, palette, copy, icons }` |
-
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

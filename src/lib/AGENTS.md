@@ -2,14 +2,20 @@
 
 Utilities, the LLM client, and the prompt builder. Pure logic — no React.
 
-## Expected files (hackathon scope)
+## Index
 
-| File | Purpose |
-|---|---|
-| `openai.ts` | Single OpenAI client instance, configured for structured outputs |
-| `prompt.ts` | Builds the system + user prompt from the input description |
-| `palette.ts` | Color manipulation helpers (e.g. derive accent from primary) |
-| `errors.ts` | Custom error classes (`LlmError`, `ValidationError`) |
+### Files here
+
+*(none yet)*
+
+### Planned (not yet created)
+
+| File | Purpose | Tracked in |
+|---|---|---|
+| `openai.ts` | Single OpenAI client instance, configured for structured outputs | `docs/architecture.md` |
+| `prompt.ts` | Builds the system + user prompt from the input description | `docs/architecture.md` |
+| `palette.ts` | Color manipulation helpers (e.g. derive accent from primary) | `docs/architecture.md` |
+| `errors.ts` | Custom error classes (`LlmError`, `ValidationError`) | `docs/architecture.md` |
 
 ## Rules
 
@@ -30,4 +36,4 @@ For a hackathon we don't need a logger lib. Don't add one.
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

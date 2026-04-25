@@ -2,17 +2,23 @@
 
 Application source. Everything that ships to the user lives under here.
 
-## Subdirectories
+## Index
 
-| Dir | Purpose |
-|---|---|
-| `app/` | Next.js App Router — pages, layouts, API routes |
-| `components/` | Reusable React UI (input box, page chrome, loading states) |
-| `templates/` | Hand-crafted SVG motion templates. **The moat.** |
-| `lib/` | LLM client, prompt builders, utilities |
-| `types/` | Shared TypeScript types and Zod schemas |
+### Files here
 
-Each has its own `AGENTS.md` — read it before editing.
+*(none — `src/` is a container; all code lives in subdirectories)*
+
+### Subdirectories
+
+| Dir | AGENTS.md | Purpose |
+|---|---|---|
+| `app/` | [`app/AGENTS.md`](./app/AGENTS.md) | Next.js App Router — pages, layouts, API routes |
+| `components/` | [`components/AGENTS.md`](./components/AGENTS.md) | Reusable React UI (input box, page chrome, loading states) |
+| `templates/` | [`templates/AGENTS.md`](./templates/AGENTS.md) | Hand-crafted SVG motion templates. **The moat.** |
+| `lib/` | [`lib/AGENTS.md`](./lib/AGENTS.md) | LLM client, prompt builders, utilities |
+| `types/` | [`types/AGENTS.md`](./types/AGENTS.md) | Shared TypeScript types and Zod schemas |
+
+Read each subdirectory's `AGENTS.md` before editing inside it.
 
 ## Cross-cutting rules
 
@@ -32,4 +38,4 @@ If you find yourself wanting to import upward, you've put something in the wrong
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->

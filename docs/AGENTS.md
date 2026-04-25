@@ -2,13 +2,20 @@
 
 Living documentation for the project. Read these before making structural decisions.
 
-## Files
+## Index
+
+### Files here
 
 | File | Purpose |
 |---|---|
 | `architecture.md` | High-level system diagram and data flow |
 | `demo-script.md` | The exact 60-second demo. Source of truth for "is this in scope?" |
-| `decisions/` | ADRs (Architecture Decision Records) — one short markdown per decision |
+
+### Subdirectories
+
+| Dir | AGENTS.md | Purpose |
+|---|---|---|
+| `decisions/` | [`decisions/AGENTS.md`](./decisions/AGENTS.md) | ADRs (Architecture Decision Records) — one short markdown per structural choice |
 
 ## Rules
 
@@ -44,4 +51,4 @@ Keep them under a screen.
 
 ---
 
-<!-- last-reviewed: 0d84014 -->
+<!-- last-reviewed: a9279ef -->
