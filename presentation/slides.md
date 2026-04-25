@@ -151,26 +151,55 @@ The LLM only emits structured JSON — never raw SVG.
 ```
 
 <div class="mt-4 text-sm opacity-70">
-  Zod-validated. Failure mode is "wrong template," which still looks good.
+  Validated against a fixed schema. Failure mode is "wrong template,"
+  which still looks good.
 </div>
 
 ---
-layout: center
-class: text-center
+layout: default
+class: pt-10
 ---
 
-# What's next
+# How we kept the AI honest
 
-<div class="text-xl mt-8 opacity-90 leading-relaxed">
-  More templates &nbsp;·&nbsp; refine-the-result editor &nbsp;·&nbsp; export-as-Lottie
+<div class="text-lg mt-2 opacity-80 max-w-3xl">
+  The AI built the product. The scaffolding made sure it built <em>this</em> product.
 </div>
 
-<div class="mt-12 text-lg opacity-70 max-w-2xl mx-auto leading-relaxed">
-  The motion library is the wedge. Every template we add compounds the
-  product without changing the prompt, the model, or the pipeline.
+<div class="mt-10 space-y-7 max-w-4xl">
+  <div class="flex gap-4">
+    <div class="text-emerald-700 text-2xl leading-none mt-1">✓</div>
+    <div>
+      <div class="text-xl font-semibold">5 enforcement layers stop bad commits before they land</div>
+      <div class="font-mono text-sm opacity-70 mt-1">
+        AGENTS.md &nbsp;→&nbsp; bun run check &nbsp;→&nbsp; pre-commit &nbsp;→&nbsp; IDE hook &nbsp;→&nbsp; CI on protected main
+      </div>
+    </div>
+  </div>
+
+  <div class="flex gap-4">
+    <div class="text-emerald-700 text-2xl leading-none mt-1">✓</div>
+    <div>
+      <div class="text-xl font-semibold">Per-directory <span class="font-mono">AGENTS.md</span> charters</div>
+      <div class="text-sm opacity-70 mt-1">
+        Every folder tells the agent what belongs and what doesn't —
+        and goes stale automatically if the code drifts past it.
+      </div>
+    </div>
+  </div>
+
+  <div class="flex gap-4">
+    <div class="text-emerald-700 text-2xl leading-none mt-1">✓</div>
+    <div>
+      <div class="text-xl font-semibold">Every structural decision has an ADR</div>
+      <div class="text-sm opacity-70 mt-1">
+        A short, reviewable record in <span class="font-mono">docs/decisions/</span>.
+        No unexplained choices in the repo.
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="mt-20 text-sm opacity-50">
-  Built in 3 hours · 1 human · Cursor agents · Apr 25 2026<br/>
-  <a href="https://github.com/" class="underline opacity-80">github.com/.../MotionPitch</a>
+<div class="abs-br mx-14 my-8 text-xs opacity-60">
+  Cursor Portland Hackathon · Apr 25 2026
 </div>
