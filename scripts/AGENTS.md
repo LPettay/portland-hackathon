@@ -10,6 +10,7 @@ Repo-hygiene tooling. **Not** product code. These scripts enforce the convention
 |---|---|
 | `check.ts` | Orchestrator. Runs all enabled checks and reports findings. |
 | `stamp.ts` | Writes the `<!-- last-reviewed: SHA -->` footer to AGENTS.md files. |
+| `worktree.ts` | Manage `git worktree`s for parallel agents (`wt:add` / `wt:list` / `wt:remove`). See ADR 0006. |
 
 ### Subdirectories
 
@@ -40,4 +41,4 @@ Repo-hygiene tooling. **Not** product code. These scripts enforce the convention
 
 ---
 
-<!-- last-reviewed: a9279ef -->
+<!-- last-reviewed: f4554fe -->

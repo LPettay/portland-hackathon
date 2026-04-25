@@ -15,6 +15,9 @@
     "agents:stamp": "bun run scripts/stamp.ts",
     "agents:stamp-all": "bun run scripts/stamp.ts --all",
     "agents:stale": "bun run scripts/check.ts --only=freshness --verbose",
+    "wt:add": "bun run scripts/worktree.ts add",
+    "wt:list": "bun run scripts/worktree.ts list",
+    "wt:remove": "bun run scripts/worktree.ts remove",
     "prepare": "bunx lefthook install || true"
   },
   "devDependencies": {
