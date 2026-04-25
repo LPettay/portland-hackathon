@@ -51,13 +51,57 @@ EOF
 
 ## Pull requests
 
-1. Open against `main`
-2. Use the [PR template](./.github/PULL_REQUEST_TEMPLATE.md)
-3. Self-review your diff before requesting review
-4. Keep PRs small (< 300 lines diff ideal); huge PRs get rejected at the door
-5. **No PR merges without a working `bun dev` confirmed by the author**
+`main` is **branch-protected**. You cannot push directly. Every change goes through this loop:
 
-For 3-hour hackathon cadence: PRs may be reviewed and merged by the author in solo work, but the template still gets filled out so we have a paper trail for the demo.
+```bash
+git switch main && git pull --ff-only         # start from latest main
+git switch -c feat/<short-slug>               # new branch per change
+# ... do the work ...
+bun run check                                 # quick local sanity (pre-commit will too)
+git add . && git commit -m "feat: ..."        # conventional commit
+git push -u origin HEAD                       # push the branch
+gh pr create --fill --web                     # open PR using the template
+# ... wait for CI (~10s) ...
+gh pr merge --squash --delete-branch          # merge once green
+git switch main && git pull --ff-only         # sync local main
+```
+
+### Rules (enforced by GitHub branch protection)
+
+1. **Open against `main`** — direct pushes are blocked
+2. **Use the [PR template](./.github/PULL_REQUEST_TEMPLATE.md)** — `gh pr create --fill` will populate it
+3. **CI must pass** (`hygiene` job: repo checks + typecheck) before merge
+4. **Self-review your diff** before merging — `gh pr diff` or the web UI
+5. **Keep PRs small** (< 300 lines diff ideal); huge PRs get rejected at the door
+6. **Confirm `bun dev` works** for any PR that touches product code
+
+### Solo-merge is allowed
+
+Approval count is set to **0** so solo work isn't blocked, but the PR is still required and CI still gates the merge. The PR template is the paper trail.
+
+### Squash-merge always
+
+We squash-merge so `main` history stays one-commit-per-PR. Conventional Commit titles on the PR become the commit message on `main`.
+
+### Branch naming
+
+| Prefix | Use |
+|---|---|
+| `feat/` | New capability or feature |
+| `fix/` | Bug fix |
+| `docs/` | Docs only |
+| `chore/` | Tooling, config, refactor with no behavior change |
+| `revert/` | Reverting a prior change |
+
+### Emergency bypass
+
+Branch protection has `enforce_admins: true` — there is **no escape hatch.** If you absolutely must commit straight to `main` (broken CI blocking the demo, etc.), the only path is:
+
+1. Temporarily disable protection: `gh api -X DELETE /repos/<owner>/<repo>/branches/main/protection`
+2. Push the fix
+3. **Immediately** re-enable protection (use the JSON in [`.github/branch-protection.json`](./.github/branch-protection.json))
+
+Document why in the commit message. Re-enable before walking away from the keyboard.
 
 ---
 

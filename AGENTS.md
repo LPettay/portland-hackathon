@@ -87,6 +87,7 @@ If a contributor (human or AI) proposes one of these, redirect to the demo scrip
 5. **After substantive edits**, run `bun run check` (the pre-commit hook will too). Fix anything you broke.
 6. **If you make a structural decision** (new directory, new dependency, schema change), append a one-paragraph ADR to `docs/decisions/`.
 7. **Commit messages** follow Conventional Commits (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
+8. **Never commit directly to `main`** — it's branch-protected. Every change goes through a PR (see [CONTRIBUTING.md](./CONTRIBUTING.md#pull-requests)). One feature = one branch = one PR = one squash-merge.
 
 ## Enforcement (you can't lie to the repo)
 
