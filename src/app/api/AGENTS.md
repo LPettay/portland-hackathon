@@ -25,3 +25,7 @@ The client should show a friendly fallback (suggest a retry or pre-baked example
 | File | Method | Purpose |
 |---|---|---|
 | `generate/route.ts` | POST | `{ description: string }` → `{ templateId, palette, copy, icons }` |
+
+---
+
+<!-- last-reviewed: 0d84014 -->

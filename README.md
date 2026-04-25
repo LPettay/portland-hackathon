@@ -22,12 +22,22 @@ The trick: the LLM doesn't generate raw SVG (it's bad at that). It picks from a 
 > Requires [Bun](https://bun.sh) ≥ 1.1
 
 ```bash
-bun install
-cp .env.example .env.local  # fill in OPENAI_API_KEY
+bun install                  # also installs lefthook git hooks
+cp .env.example .env.local   # fill in OPENAI_API_KEY
+bun run check                # repo hygiene checks (run by pre-commit too)
 bun dev
 ```
 
 Open <http://localhost:3000>.
+
+### Useful scripts
+
+| Command | Purpose |
+|---|---|
+| `bun run check` | All repo-hygiene checks (AGENTS.md presence, forbidden artifacts, freshness) |
+| `bun run agents:stale` | Show which AGENTS.md files are stale and what changed |
+| `bun run agents:stamp <path>` | Mark an AGENTS.md as reviewed at current HEAD |
+| `bun run agents:stamp-all` | Mark every AGENTS.md as reviewed (after sweep review) |
 
 ---
 
@@ -46,6 +56,7 @@ See [`docs/architecture.md`](./docs/architecture.md) for the full diagram.
 ├── .cursor/rules/      # Persistent Cursor agent rules (TS, React, etc.)
 ├── .github/            # PR template, issue templates, CI
 ├── docs/               # Architecture, ADRs, demo script
+├── presentation/       # Slidev judges-handout deck (self-contained sub-project)
 ├── public/             # Static assets
 ├── src/
 │   ├── app/            # Next.js app router (pages + API routes)
@@ -65,6 +76,20 @@ Every meaningful directory has its own `AGENTS.md` with scope-specific guidance 
 ## Demo script
 
 See [`docs/demo-script.md`](./docs/demo-script.md).
+
+---
+
+## Judges handout deck
+
+A 3-slide [Slidev](https://sli.dev) deck for projecting alongside the live demo (and for export as a PDF takeaway):
+
+```bash
+cd presentation
+bun install
+bun dev
+```
+
+See [`presentation/README.md`](./presentation/README.md).
 
 ---
 

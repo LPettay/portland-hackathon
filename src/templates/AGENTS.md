@@ -59,3 +59,7 @@ See `.cursor/rules/svg-templates.mdc` for the full list. Highlights:
 ## Cap
 
 **4 templates total** for the hackathon. Adding a 5th means removing one. File a `template-request` issue.
+
+---
+
+<!-- last-reviewed: 0d84014 -->

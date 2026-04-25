@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "command": ".cursor/hooks/check-agents-md.sh",
+        "matcher": "Write",
+        "timeout": 5
+      }
+    ]
+  }
+}

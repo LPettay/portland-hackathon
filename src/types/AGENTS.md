@@ -36,3 +36,7 @@ export const TemplateSelectionSchema = z.object({
 
 export type TemplateSelection = z.infer<typeof TemplateSelectionSchema>;
 ```
+
+---
+
+<!-- last-reviewed: 0d84014 -->

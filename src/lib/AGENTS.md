@@ -27,3 +27,7 @@ console.error('LLM call failed', { error: e, prompt: redacted(prompt) });
 ```
 
 For a hackathon we don't need a logger lib. Don't add one.
+
+---
+
+<!-- last-reviewed: 0d84014 -->

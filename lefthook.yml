@@ -1,0 +1,17 @@
+# Lefthook config — git hooks for MotionPitch
+# https://github.com/evilmartians/lefthook
+#
+# Bypass with --no-verify only in emergencies. Document why in your commit
+# message if you do.
+
+pre-commit:
+  parallel: true
+  commands:
+    repo-checks:
+      run: bun run check
+      stage_fixed: false
+
+# Add typecheck once src/ has TypeScript code:
+#    typecheck:
+#      glob: "**/*.{ts,tsx}"
+#      run: bun run typecheck

@@ -80,8 +80,43 @@ This repo is built with Cursor agents. To keep them effective:
 
 1. **Read the `AGENTS.md`** in the directory you're working in before making changes.
 2. **Prefer editing existing files** over creating new ones.
-3. **Run `bun run lint && bun run typecheck`** before committing if you've changed code.
+3. **Run `bun run check`** before committing — and the pre-commit hook will run it for you anyway.
 4. **If a Cursor agent makes a structural decision** (new dependency, new directory, architectural shift), document it as a one-paragraph ADR in `docs/decisions/`.
+
+## Enforcement
+
+Conventions in this repo are enforced by a 5-layer system. You don't have to remember them — the tooling will tell you when something's off.
+
+| Layer | What it catches | When |
+|---|---|---|
+| **1. Documentation** | Intent only — describes the rules | Always |
+| **2. `bun run check`** | Missing AGENTS.md, forbidden lockfiles, stale stamps | Manual or pre-commit |
+| **3. Pre-commit (lefthook)** | Runs `bun run check` automatically | Every `git commit` |
+| **4. Cursor hook** | Live nudge when an agent writes to a dir without AGENTS.md | While Cursor is editing |
+| **5. CI (GitHub Actions)** | Backstop — same checks plus typecheck | Every push & PR |
+
+### The freshness contract
+
+Every `AGENTS.md` carries a footer:
+
+```markdown
+<!-- last-reviewed: 0d84014 -->
+```
+
+When more than **5 non-AGENTS files** in its directory change after that SHA, the doc is considered stale and `bun run check` will fail until you:
+
+1. **Read the current `AGENTS.md`** for that directory
+2. **Read what changed** in the directory since the stamp: `git diff <sha>..HEAD -- <dir>`
+3. **Edit the AGENTS.md if it no longer accurately reflects the directory**
+4. **Re-stamp it:** `bun run agents:stamp <path-to-agents-md>`
+
+To stamp every AGENTS.md at once (after a sweeping review): `bun run agents:stamp-all`.
+
+To see what's currently stale: `bun run agents:stale`.
+
+### Bypassing checks
+
+If you absolutely must commit through a failure, use `git commit --no-verify` and document **why** in the commit body. CI will still catch it on push.
 
 ---
 

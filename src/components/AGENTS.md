@@ -25,3 +25,7 @@ That's the expected set for the hackathon. Add more only if essential.
 - API logic → `src/app/api/`
 - Page-specific layout → `src/app/`
 - Pure utilities → `src/lib/`
+
+---
+
+<!-- last-reviewed: 0d84014 -->

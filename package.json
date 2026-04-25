@@ -1,0 +1,25 @@
+{
+  "name": "motionpitch",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Type a business in one sentence, get a one-page landing site whose hero is a custom-animated SVG scene.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "bun": ">=1.1.0"
+  },
+  "scripts": {
+    "check": "bun run scripts/check.ts",
+    "check:agents": "bun run scripts/check.ts --only=presence,freshness",
+    "check:fs": "bun run scripts/check.ts --only=forbidden",
+    "agents:stamp": "bun run scripts/stamp.ts",
+    "agents:stamp-all": "bun run scripts/stamp.ts --all",
+    "agents:stale": "bun run scripts/check.ts --only=freshness --verbose",
+    "prepare": "bunx lefthook install || true"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "lefthook": "^1.7.0",
+    "typescript": "^5.5.0"
+  }
+}

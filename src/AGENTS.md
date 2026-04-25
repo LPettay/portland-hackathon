@@ -29,3 +29,7 @@ app/  →  components/  →  templates/
 ```
 
 If you find yourself wanting to import upward, you've put something in the wrong place.
+
+---
+
+<!-- last-reviewed: 0d84014 -->

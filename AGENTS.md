@@ -84,9 +84,21 @@ If a contributor (human or AI) proposes one of these, redirect to the demo scrip
 2. **Prefer editing existing files** over creating new ones.
 3. **Before suggesting a new dependency**, check if Bun + Next.js + Framer Motion + Tailwind already covers it. They usually do.
 4. **Before running `bun add <pkg>`**, confirm with the human.
-5. **After substantive edits**, run `bun run lint && bun run typecheck` and fix anything you broke.
+5. **After substantive edits**, run `bun run check` (the pre-commit hook will too). Fix anything you broke.
 6. **If you make a structural decision** (new directory, new dependency, schema change), append a one-paragraph ADR to `docs/decisions/`.
 7. **Commit messages** follow Conventional Commits (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
+
+## Enforcement (you can't lie to the repo)
+
+Five layers stop bad commits. You don't need to memorize them — `bun run check` reports everything and tells you how to fix it. Highlights:
+
+- **AGENTS.md is mandatory** for every directory under `src/` and `docs/` that contains files. The presence check fails commits that skip this.
+- **AGENTS.md goes stale** after >5 non-AGENTS file changes in its directory since the last stamp. Re-review and re-stamp with `bun run agents:stamp <path>`.
+- **A Cursor `postToolUse` hook** nudges you in real time when you write a file to a directory without an AGENTS.md.
+- **No `package-lock.json` / `yarn.lock` / `pnpm-lock.yaml`** — bun only.
+- **No committed `.env*` files** except `.env.example`.
+
+Full details: [`CONTRIBUTING.md`](./CONTRIBUTING.md#enforcement).
 
 ---
 
@@ -106,3 +118,7 @@ Decisions you can make autonomously:
 - Adding tests
 - Documentation improvements
 - Tailwind class adjustments for spacing/typography
+
+---
+
+<!-- last-reviewed: 0d84014 -->

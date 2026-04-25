@@ -25,3 +25,7 @@ That's it. **Do not add more routes.** If you think you need one, talk to the hu
 ## Metadata
 
 - Set `metadata` in `app/layout.tsx` for OG tags. Hackathon judges screenshot things; nice OG image earns points.
+
+---
+
+<!-- last-reviewed: 0d84014 -->
