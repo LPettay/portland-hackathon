@@ -1,7 +1,7 @@
 # MotionPitch
 
 > **Status:** Hackathon project — Cursor Portland Hackathon, Apr 25 2026.
-> Scaffolding + enforcement layer landed; the Next.js app gets built during the live window.
+> Next.js app scaffolded and rendering a placeholder homepage; LLM pipeline + SVG templates land next.
 > **Working name:** MotionPitch (subject to change)
 
 Type a business in one sentence, get a one-page landing site whose hero is a custom-animated SVG scene generated for that business.
@@ -22,18 +22,23 @@ The trick: the LLM doesn't generate raw SVG (it's bad at that). It picks from a 
 
 > Requires [Bun](https://bun.sh) ≥ 1.1
 
-Today (scaffolding + enforcement; works right now):
-
 ```bash
 bun install                  # also installs lefthook git hooks
-bun run check                # repo hygiene checks (run by pre-commit too)
+bun dev                      # Next.js dev server on http://localhost:3000
 ```
 
-Once the Next.js app is scaffolded (during the build window):
+The homepage is currently a placeholder — the input box, LLM pipeline, and animated templates land in subsequent PRs.
+
+Repo-hygiene check (also runs on pre-commit and CI):
+
+```bash
+bun run check
+```
+
+Once the LLM pipeline is wired up, you'll also need:
 
 ```bash
 cp .env.example .env.local   # fill in OPENAI_API_KEY
-bun dev                      # Next.js dev server on http://localhost:3000
 ```
 
 ### Useful scripts

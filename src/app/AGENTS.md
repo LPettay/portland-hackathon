@@ -6,7 +6,11 @@ Next.js App Router. Pages, layouts, and API routes only.
 
 ### Files here
 
-*(none yet — Next.js app not scaffolded)*
+| File | Purpose |
+|---|---|
+| `layout.tsx` | Root layout: `<html>`/`<body>`, metadata, global CSS import |
+| `page.tsx` | Homepage. Placeholder for now; will host the input box + generated output |
+| `globals.css` | Tailwind v4 entry (`@import "tailwindcss"`) + base styles |
 
 ### Subdirectories
 
@@ -18,8 +22,6 @@ Next.js App Router. Pages, layouts, and API routes only.
 
 | File | Purpose | Tracked in |
 |---|---|---|
-| `layout.tsx` | Root layout, metadata, OG tags | `docs/architecture.md` |
-| `page.tsx` | The single input box + generated output | `docs/architecture.md` |
 | `loading.tsx` | SVG draw-in loader (not a spinner) | `docs/demo-script.md` |
 | `api/generate/route.ts` | POST: business description → JSON template selection | `docs/architecture.md` |
 
@@ -44,4 +46,4 @@ Next.js App Router. Pages, layouts, and API routes only.
 
 ---
 
-<!-- last-reviewed: a9279ef -->
+<!-- last-reviewed: 1ec8a68 -->
