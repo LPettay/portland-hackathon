@@ -12,6 +12,7 @@
     "check": "bun run scripts/check.ts",
     "check:agents": "bun run scripts/check.ts --only=presence,freshness",
     "check:fs": "bun run scripts/check.ts --only=forbidden",
+    "typecheck": "bunx tsc --noEmit",
     "agents:stamp": "bun run scripts/stamp.ts",
     "agents:stamp-all": "bun run scripts/stamp.ts --all",
     "agents:stale": "bun run scripts/check.ts --only=freshness --verbose",
