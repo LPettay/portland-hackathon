@@ -4,9 +4,11 @@ A 3-slide [Slidev](https://sli.dev) deck designed to project alongside the live 
 
 ## Slides
 
-1. **Hook** — what MotionPitch does, in one line + a visual
-2. **The trick** — humans craft the SVG templates, the LLM only picks + customizes
-3. **What's next** — the moat (motion library) and the roadmap
+1. **Principles** — we built the scaffolding before the product (5-layer enforcement, AGENTS.md, ADRs, worktrees)
+2. **Architecture** — data flow + stack table; one API route, one schema, one render path
+3. **Demo** — "prompt in, cute SVG gif out" + live URL + 3 example outputs
+
+The deck leads with principles because, for this hackathon, the engineering rigor is the differentiator. The product fits in one sentence and lives at [motionpitch.vercel.app](https://motionpitch.vercel.app).
 
 ## Run it
 
@@ -26,9 +28,11 @@ bun run export-pdf   # writes slides-export.pdf
 
 ## Edit
 
-The whole deck lives in [`slides.md`](./slides.md). Slidev hot-reloads on save.
+- Slide ordering, frontmatter, and speaker notes live in [`slides.md`](./slides.md).
+- Each slide body lives in a Vue SFC under [`components/`](./components/) — markdown-it can't be trusted to round-trip nested HTML inside a slide block, so we promote slide bodies to components.
+- Style tokens (colors, fonts) are defined per-component using `<style scoped>` and documented in [`AGENTS.md`](./AGENTS.md).
 
-Style tweaks live in the `<style>` block at the top of `slides.md` and use Tailwind/UnoCSS classes inline.
+Slidev hot-reloads on save.
 
 ## Why a separate sub-project?
 
