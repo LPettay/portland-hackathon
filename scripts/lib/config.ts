@@ -18,13 +18,20 @@ export const config = {
     "coverage",
   ]),
 
-  /** Files that should never be committed. */
+  /**
+   * Files that should never exist at the repo root.
+   *
+   * Note: `.env.local` is intentionally NOT here. It IS gitignored and IS the
+   * documented home for local secrets (see `.env.example` and the README quick
+   * start). `.env` and `.env.production` remain because they are easy to commit
+   * by mistake — `.env.production` is not gitignored at all, and many tools
+   * auto-load `.env`, so we nudge developers toward `.env.local`.
+   */
   forbiddenFiles: [
     "package-lock.json",
     "yarn.lock",
     "pnpm-lock.yaml",
     ".env",
-    ".env.local",
     ".env.production",
   ] as const,
 
