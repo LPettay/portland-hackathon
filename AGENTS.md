@@ -15,7 +15,8 @@ Read this once and you know where to go next. Every entry below is a real `AGENT
 ├── AGENTS.md                       ← you are here (constraints, time budget, scope firewall)
 ├── .cursor/AGENTS.md               Cursor rules + hooks layout (rules/, hooks/)
 ├── docs/AGENTS.md                  Architecture + ADR conventions
-│   └── decisions/AGENTS.md         ADR format + when to write one
+│   ├── decisions/AGENTS.md         ADR format + when to write one
+│   └── templates/AGENTS.md         Per-template design briefs (one per src/templates/*)
 ├── presentation/AGENTS.md          Slidev judges-handout deck (3-slide cap)
 ├── scripts/AGENTS.md               Repo-hygiene scripts (check, stamp)
 │   └── lib/AGENTS.md               Check helper modules (config, walk, git, types, checks)
